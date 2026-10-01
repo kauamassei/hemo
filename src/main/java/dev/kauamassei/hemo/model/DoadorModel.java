@@ -19,19 +19,15 @@ public class DoadorModel {
     @Column (name = "id")
     private Long id;
 
-    //cpf
     @Column (unique = true)
     private String cpf;
 
-    //telefone
     @Column (name = "telefone")
     private String telefone;
 
-    //data nasc
     @Column (name = "data_nascimento")
     private LocalDate dataNascimento;
 
-    //tipo sanguineo
     @Column (name = "tipo_sanguineo")
     private String tipoSanguineo;
 
