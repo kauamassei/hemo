@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FuncionarioModel {
+public class UnidadeColetaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +21,21 @@ public class FuncionarioModel {
     private String nome;
 
     @Column (unique = true)
-    private String email;
+    private String cnpj;
 
-    @Column (name = "password")
-    private String password;
+    @Column (name = "telefone")
+    private String telefone;
+
+    @Column (name = "endereco")
+    private String endereco;
+
+    @Column (name = "cidade")
+    private String cidade;
+
+    @Column (name = "estado")
+    private String estado;
+
+
 
 
 }
