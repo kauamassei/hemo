@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table (name = "tb_cadastro_funcionario")
 @Data
@@ -20,7 +22,7 @@ public class UnidadeColetaModel {
     @Column (name = "nome")
     private String nome;
 
-    @Column (unique = true)
+    @Column (name = "cnpj", unique = true)
     private String cnpj;
 
     @Column (name = "telefone")
@@ -35,6 +37,11 @@ public class UnidadeColetaModel {
     @Column (name = "estado")
     private String estado;
 
+    @OneToMany(mappedBy = "unidadeColeta")
+    private List<AgendaModel> agendamentos;
+
+    @OneToMany(mappedBy = "unidadeColeta")
+    private List<EstoqueModel> estoques;
 
 
 

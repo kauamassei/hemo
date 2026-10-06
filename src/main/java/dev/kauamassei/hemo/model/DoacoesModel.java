@@ -38,5 +38,11 @@ public class DoacoesModel {
     @Column (name = "aptidao")
     private boolean aptidao;
 
+    @OneToOne
+    @JoinColumn(name = "agendamento_id")
+    private AgendaModel agendamento;
+
+
+
 
 }

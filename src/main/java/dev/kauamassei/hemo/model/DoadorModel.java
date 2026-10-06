@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro_doador")
@@ -31,6 +32,8 @@ public class DoadorModel {
     @Column (name = "tipo_sanguineo")
     private String tipoSanguineo;
 
+    @OneToMany(mappedBy = "doador")
+    private List<AgendaModel> agendamentos;
 
 
 }
