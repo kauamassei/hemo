@@ -1,11 +1,13 @@
 package dev.kauamassei.hemo.model;
 
+import dev.kauamassei.hemo.dto.StatusAgendamento;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_agendamento")
@@ -22,8 +24,19 @@ public class AgendaModel {
     @Column (name = "data_agenda")
     private LocalDateTime dataAgenda;
 
+    @Enumerated(EnumType.STRING)
     @Column (name = "status")
-    private String status;
+    private StatusAgendamento status;
+    
+    @ManyToOne
+    @JoinColumn(name = "doador_id")
+    private DoadorModel doador;
 
+    @OneToOne(mappedBy = "agendamento")
+    private DoacoesModel doacao;
+
+    @ManyToOne
+    @JoinColumn(name = "unidade_coleta_id")
+    private UnidadeColetaModel unidadeColeta;
 
 }
