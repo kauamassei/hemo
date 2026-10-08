@@ -2,7 +2,9 @@ package dev.kauamassei.hemo.mapper;
 
 import dev.kauamassei.hemo.dto.DoadorDTO;
 import dev.kauamassei.hemo.model.DoadorModel;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DoadorMapper {
 
     public DoadorModel map(DoadorDTO doadorDTO) {
