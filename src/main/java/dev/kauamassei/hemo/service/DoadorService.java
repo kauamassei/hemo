@@ -43,6 +43,17 @@ public class DoadorService {
     }
 
     //put user
+    public DoadorDTO alterarDoadorPorId(Long id, DoadorDTO doadorDTO) {
+        Optional<DoadorModel> doadorPorId = doadorRepository.findById(id);
+        if (doadorPorId.isPresent()) {
+            DoadorModel doadorAtualizado = doadorMapper.map(doadorDTO);
+            doadorAtualizado.setId(id);
+            DoadorModel doadorSalvo = doadorRepository.save(doadorAtualizado);
+            return doadorMapper.map(doadorSalvo);
+        }
+
+        return null;
+    }
 
 
 
