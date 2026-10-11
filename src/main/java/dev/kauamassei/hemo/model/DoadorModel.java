@@ -20,6 +20,9 @@ public class DoadorModel {
     @Column (name = "id")
     private Long id;
 
+    @Column (name = "nome")
+    private String nome;
+
     @Column (unique = true)
     private String cpf;
 
