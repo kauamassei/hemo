@@ -55,8 +55,6 @@ public class DoadorService {
         return null;
     }
 
-
-
     //delete user
     public void deletarDoador(Long id) {
         doadorRepository.deleteById(id);
