@@ -12,9 +12,14 @@ import java.time.LocalDate;
 public class DoadorDTO {
 
     private Long id;
+    private String nome;
     private String cpf;
     private String telefone;
     private String tipoSanguineo;
     private LocalDate dataNascimento;
+    private String email;
+    private String endereco;
+    private String sexo;
+    private String cep;
 
 }

@@ -35,6 +35,18 @@ public class DoadorModel {
     @Column (name = "tipo_sanguineo")
     private String tipoSanguineo;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "endereco")
+    private String endereco;
+
+    @Column(name = "sexo")
+    private String sexo;
+
+    @Column(name = "cep")
+    private String cep;
+
     @OneToMany(mappedBy = "doador")
     private List<AgendaModel> agendamentos;
 
