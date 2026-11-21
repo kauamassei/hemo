@@ -23,6 +23,16 @@ public class AgendaMapper {
         agendaDTO.setDataAgenda(agendaModel.getDataAgenda());
         agendaDTO.setStatus(agendaModel.getStatus());
 
+        if (agendaModel.getDoador() != null) {
+            agendaDTO.setDoadorId(agendaModel.getDoador().getId());
+            agendaDTO.setNomeDoador(agendaModel.getDoador().getNome());
+        }
+
+        if (agendaModel.getUnidadeColeta() != null) {
+            agendaDTO.setUnidadeId(agendaModel.getUnidadeColeta().getId());
+            agendaDTO.setNomeUnidade(agendaModel.getUnidadeColeta().getNome());
+        }
+
         return agendaDTO;
     }
 }

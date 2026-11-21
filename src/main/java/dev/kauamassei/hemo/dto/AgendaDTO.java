@@ -14,5 +14,9 @@ public class AgendaDTO {
     private Long id;
     private LocalDateTime dataAgenda;
     private StatusAgendamento status;
+    private Long doadorId;
+    private String nomeDoador;
+    private Long unidadeId;
+    private String nomeUnidade;
 
 }
