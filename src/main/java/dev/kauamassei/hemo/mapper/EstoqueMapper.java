@@ -2,6 +2,7 @@ package dev.kauamassei.hemo.mapper;
 
 import dev.kauamassei.hemo.dto.EstoqueDTO;
 import dev.kauamassei.hemo.model.EstoqueModel;
+import dev.kauamassei.hemo.model.UnidadeColetaModel;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,6 +15,7 @@ public class EstoqueMapper {
         estoqueModel.setQuantidadeMl(estoqueDTO.getQuantidadeMl());
         estoqueModel.setCapacidadeMl(estoqueDTO.getCapacidadeMl());
 
+
         return estoqueModel;
     }
 
@@ -23,6 +25,9 @@ public class EstoqueMapper {
         estoqueDTO.setTipoSanguineo(estoqueModel.getTipoSanguineo());
         estoqueDTO.setQuantidadeMl(estoqueModel.getQuantidadeMl());
         estoqueDTO.setCapacidadeMl(estoqueModel.getCapacidadeMl());
+        estoqueDTO.setUnidadeId(estoqueModel.getUnidadeColeta().getId());
+        estoqueDTO.setUnidadeColeta(estoqueModel.getUnidadeColeta().getNome());
+
 
         return estoqueDTO;
     }
